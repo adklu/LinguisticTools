@@ -1,0 +1,96 @@
+GlossaryCheck Manual
+
+CONTENT:
+
+INTRODUCTION
+THE INPUT FILE
+GlossaryCheck
+GC MatchCase
+GCList
+GCList (Split)
+GCList (Cut)
+GlossaryList
+NumberCheck
+GlossaryCreator
+
+
+INTRODUCTION
+
+GlossaryCheck is a linguistic tool to help find terminology errors in large string based localization projects using spreadsheet files. Terminology translation errors can make texts more difficult to understand or can change the meaning. Without Computer-assisted translation software, it is difficult and time consuming to find terminology translation errors. Correct terminology is a feature of high quality translations, especially of more complex texts (e.g. philosophy or scientific texts, but also novels or texts in games). Imagine a special term in a philosophical text has several different translations...
+
+GlossaryCheck works with bulk inputs of glossaries (up to 1048576 entries) and string files (up to 1048576 strings) via .xlsx spreadsheets. GlossaryCheck is independent of other Computer-assisted translation software and can be used as an analyzing tool, analyzing the bulk output of several translators, collected in one single spreadsheet (e.g. selective output of large MySql databases). The output of GlossaryCheck is a .xlsx spreadsheet with detailed info about localization terminology errors (String ID, terminology term in source and localized language, original string, localized string).
+
+GlossaryCheck lists strings, where the source string contains a terminology term and the translated string does not contain the corresponding term. GlossaryCheck's input tool allows different sensitivity settings e.g. case insensitive/sensitive, word boundaries insensitive/sensitive for thousands of Glossary terms at the same time.
+
+GlossaryCheck contains also tools to list all strings containing Terminology terms (GlossaryList), to check typos of numbers inside of strings and to create or extend terminology lists (GCCreator). 
+
+GlossaryCheck is written by A.D.Klumpp using Python and the Python library openpyxl including jdcal and et_xmlfile (see license texts below or in the folders of the libraries). GlossaryCheck is released under the terms of the GNU General Public License (See http://www.gnu.org/licenses/). Copyright (C) 2015 A.D.Klumpp. GlossaryCheck is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The full copyright notices and the full license texts shall be included in all copies or substantial portions of the Software. Alternative versions of GlossaryCheck are written by A.D. Klumpp using Python and the Python libraries openpyxl (including jdcal and et_xmlfile), XlsxWriter and kivy (thanks to python-for-android). 
+
+Python is released under the Python Software Foundation License (see https://www.python.org/download/releases/2.7.6/license/). Openpyxl is released under MIT/Expat license (see https://openpyxl.readthedocs.org/en/latest/). Kivy is released under the MIT License (see https://github.com/kivy/kivy/blob/master/LICENSE). jdcal is released under BSD (see https://pypi.python.org/pypi/jdcal). et_xmlfile is released under MIT (Home-page: https://bitbucket.org/openpyxl/et_xmlfile).
+
+Please read the full license texts Online or in the LICENSES.txt document, which is inside the GlossaryCheck folder.
+
+
+
+
+
+THE INPUT FILE
+
+Format:.xlsx
+
+Structure:
+
+Sheet 1 (Glossary/Terminology):
+Column 1: Glossary Source language
+Column 2: Glossary Translation
+
+Sheet 2 (Strings):
+Column 1: String ID
+Column 2: Strings Source language
+Column 3: Strings Translation
+
+Don't input formatting data
+For some analysis programs not all input columns are required. See below.
+Open the input file (open the START-Menu and select the analysis program, see below) and wait until the done-pop up appears. This can take several minutes.
+Open with LibreOffice, OpenOffice or MS Excel the output file, which is now in the same location as the GlossaryCheck starter file.
+
+
+
+
+GlossaryCheck
+Input: All input columns required.
+Lists strings, where the source string contains a glossary term and the translated string does not contain the corresponding glossary term. Case insensitive, but sensitive to word boundaries (if the term is 'Def' it will not search for 'Definition', but for 'def'). Ignores line breaks inside of Excel cells. The analysis of large files can take longer, depending on the performance of the system).
+
+
+GC MatchCase
+Input: All input columns required.
+All input columns required. Same features as GlossaryCheck, but case sensitive.
+
+
+GCList
+Input: Not required: Glossary Translation.
+Lists all strings containing Glossary terms. Case insensitive, word boundaries sensitive, ignores line breaks in strings.
+
+
+GCList (Split)
+Input: Not required: Glossary Translation.
+Splits Glossary terms, which consists of several longer words so that the parts are new Glossary terms.
+
+
+GCList (Cut)
+Input: All input columns required.
+Lists Strings, where the beginning of a word is the same as a Glossary term (if the term is 'Def' it will also search for 'Definition'). Case and word boundaries insensitive, ignores line breaks in strings.
+
+
+NumberCheck
+Input: Tab 1 can be let empty. Please always put the strings on Tab 2.
+Lists all strings, where numeral values (not number words) are different compared to the source string. E.g.: Source string: 130 tanks, translation: 13 Tanks
+
+
+GCCreator
+Input: Tab 1 can be let empty. Please always put the strings on Tab 2.
+Returns a word frequency count list (Column 1: term, Column 2: frequency), sorted by frequency. This data can be used in order to create a glossary list or to extend an existing glossary list, by selecting the most important words. In order to list the used translations, copy the selection into Column 1, tab 1 of the GCList input file (let the second Column of tab 1 empty) and start GCList. With the GCList output the second column of tab 1 (glossary translation) of the GC-Input file can be completed in order to finish the GC-input file. Please note that for the word frequency counter only English is supported as source language.
+
+
+
+
