@@ -9,11 +9,17 @@ LinguisticTools:
 Requirements:
 
 MySQL 
+
 MySQLdb 1.2.3
+
 openpyxl 2.3.3.
+
 jdcal 1.2
+
 et_xmlfile-1.0.1
+
 Python 2.7 (2.7.10)
+
 
 GlossaryCheck is a linguistic tool to help find terminology errors in large string based localization projects using spreadsheet files. GlossaryCheck works with bulk inputs of glossaries (up to 1048576 entries) and string files (up to 1048576 strings) via .xlsx spreadsheets. GlossaryCheck is independent of other Computer-assisted translation software and can be used as an analyzing tool, analyzing the bulk output of several translators, collected in one single spreadsheet (e.g. selective output of large MySql databases). The output of GlossaryCheck is a .xlsx spreadsheet with detailed info about localization terminology errors (String ID, terminology term in source and localized language, original string, localized string). GlossaryCheck's input tool allows different sensitivity settings e.g. case insensitive/sensitive, word boundaries insensitive/sensitive for thousands of Glossary terms at the same time. GlossaryCheck contains also a tool to create or extend terminology lists (GCCreator). 
 
