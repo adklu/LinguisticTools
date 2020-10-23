@@ -27,7 +27,7 @@ MySQLCheck is a tool to search for multiple terms (up to 1048576) in strings of 
 
 Search+Mark is a tool to search for and mark entries in multiple .xlsx spreadsheet files. Different settings allow to adjust the sensitivity of the search engine as well as the location, cell color and content of the mark and comment input. Search+Mark allows to assign different selections of multiple .xlsx spreadsheets and to store this selections permanent. Search+Mark informs the user about all important data, without the need to open the .xlsx file. Search+Mark contains the editor tool Search+Edit. With Search+Edit it is possible to search in multiple .xlsx spreadsheet files and to edit any cell, without opening the spreadsheet in Office.
 
-Search+Mark is written by A.D.Klumpp using Python and the Python library openpyxl including jdcal and et_xmlfile (see license texts below or in the folders of the libraries). Search+Mark is released under the terms of the GNU General Public License (See http://www.gnu.org/licenses/). Copyright (C) 2016 A.D.Klumpp. Search+Mark is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The full copyright notices and the full license texts shall be included in all copies or substantial portions of the Software.
+GlossaryCheck, MySQLCheck and Search+Mark are written by A.D.Klumpp and released under the terms of the GNU General Public License v2 (See http://www.gnu.org/licenses/). Copyright (C) 2016 A.D.Klumpp. Search+Mark is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The full copyright notices and the full license texts shall be included in all copies or substantial portions of the Software.
 
 
 Quick start:
